@@ -6,9 +6,25 @@
   Once you've implemented the logic, test your code by running
   - `npm run test-anagram`
 */
-
-function isAnagram(str1, str2) {
-
+function sort(str) {
+  var array = str.split("");
+  array = array.sort();
+  var sortedString = array.join("");
+  return sortedString;
 }
+// npm run test-anagram
+function isAnagram(str1, str2) {
+  var str1lower = str1.toLowerCase();
+  var str2lower = str2.toLowerCase();
+
+  if (sort(str1lower) == sort(str2lower)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+var ans = isAnagram("listen", "silent");
+console.log(ans);
 
 module.exports = isAnagram;
